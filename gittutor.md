@@ -50,6 +50,7 @@
 
 + 提交更新 `git commit` `git commit -m "message"`
 
++ 跳过暂存区域直接提交 `git commit -a`
 
 
 
