@@ -1,2 +1,0 @@
-# gittest
-learn git 
