@@ -108,13 +108,49 @@
 
     `gitk`
 
-+ 
++ 修改最后一次提交
 
-   
+    ```sh
+    git commit --amend  # 不做更改直接执行则会更改提交说明
+    # 如果更改暂存再运行则只会提交一次内容
+    git commit -m "initial commit"
+    git add forgottten_file
+    git commit --amend
+    ```
 
++ 取消暂存或文件修改
 
+    ```sh
+    # 可以根据git返回的提示直接操作即可
+    git reset HEAD file     # 取消暂存
+    git checkout -- file    # 取消文件修改 谨慎操作
+    ```
 
++ 查看远程仓库
 
+    ```sh
+    git clone url
+    git remote -v   # 显示克隆地址
+    ```
 
++ 添加远程仓库
 
+    ```sh
+    git remote add [shortname] [url]
+    # 例如
+    git remote add pb git://github.com/paulboone/ticgit.git
+    git remote -v   # 查看
+    # 这时候就可以使用pb 来代替仓库地址
+    ```
 
++ 远程仓库抓取数据
+
+    ```sh
+    git fetch pb    # 抓取本地仓库没有的信息，但是并不自动合并
+    git pull        # 这个是自动抓取数据并自动合并到本地
+    ```
+
++ 推送数据到远程仓库
+
+    ```sh
+    git push [remote-name] [branch-name]
